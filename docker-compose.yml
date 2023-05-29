@@ -1,0 +1,39 @@
+version: '3.1'
+
+services:
+  www:
+    container_name: php-apache
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - "./files:/var/www/html"
+    ports:
+      - 80:80
+      - 443:443
+
+  db:
+    container_name: db
+    image: mariadb:10.8.2
+    restart: unless-stopped
+    environment:
+      #MYSQL_ROOT_PASSWORD: Pass@123
+      MYSQL_USER: "username"
+      MYSQL_PASSWORD: "Pass@123"
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - "./mariadb/data:/var/lib/mysql/data/"
+      - "./mariadb/logs:/var/lib/mysql/logs/"
+    expose:
+      - "3306"
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST: db
