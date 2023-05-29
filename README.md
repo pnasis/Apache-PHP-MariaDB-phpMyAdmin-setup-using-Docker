@@ -1,4 +1,4 @@
-# What is a web server?
+## What is a web server?
 
 A web server is a computer or software application that serves as the foundation for hosting websites and delivering web content over the internet. It receives requests from web browsers or clients and responds by sending back the requested web pages, files, or other resources.
 
