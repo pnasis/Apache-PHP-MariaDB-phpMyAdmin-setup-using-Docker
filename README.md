@@ -58,7 +58,7 @@ mkdir WebServer && cd  WebServer
 ```
 **Step 2:** Then you have to clone this repository by running the following command
 ```Bash
-https://github.com/pnasis/Web-Server-setup-using-Docker.git
+https://github.com/pnasis/Apache-PHP-MariaDB-phpMyAdmin-setup-using-Docker.git
 ```
 **Step 3:** Run the following command in order to deploy the stack from the **docker-compose.yml** file
 ```Bash
